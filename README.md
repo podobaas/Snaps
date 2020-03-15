@@ -10,38 +10,26 @@
 
 <h3 align="center"><a href="https://github.com/podobaas/Snaps/releases/tag/1.0">Download binaries</a></h3>
   
+## About
++ [Install dotnet runtime](https://docs.microsoft.com/ru-ru/dotnet/core/install/linux-package-manager-ubuntu-1804)
++ [Build project](README.md#build-project)
++ [Create alias](README.md#create-alias)
++ [Usage](README.md#usage)
 
-## Build
 
-##### Install dotnet runtime
-```bash
-wget -q https://packages.microsoft.com/config/ubuntu/19.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-sudo dpkg -i packages-microsoft-prod.deb
-sudo apt-get update
-sudo apt-get install apt-transport-https
-sudo apt-get update
-sudo apt-get install dotnet-runtime-3.1
-```
-
-##### Build project
+## Build project
 ```bash
 cd <path to Snaps.sln>
 dotnet build -c Release
 ```
 
-##### Create alias
+## Create alias
 ```bash
 nano ~/.bashrc
 alias snaps="dotnet /xxx/xxx/Snaps.dll>"
 ```
 
 ## Usage
-
-##### Download binaries and create alias
-```bash
-nano ~/.bashrc
-alias snaps="dotnet /xxx/xxx/Snpas.dll"
-```
 
 ##### Set API token
 ```bash
