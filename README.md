@@ -15,6 +15,12 @@
 + [Build project](README.md#build-project)
 + [Create alias](README.md#create-alias)
 + [Usage](README.md#usage)
+    + [Set API token](README.md#set-api-token)
+    + [Set max parallel tasks](README.md#set-max-parallel-tasks)
+    + [Create snapshot for droplets](README.md#create-snapshot-for-droplets)
+    + [Create snapshot for volumes](README.md#create-snapshot-for-volumes)
+    + [Create cron job](README.md#create-cron-job)
+    + [Crete cron job from a file](README.md#create-cron-job-from-a-file)
 
 
 ## Build project
@@ -31,27 +37,38 @@ alias snaps="dotnet /xxx/xxx/Snaps.dll>"
 
 ## Usage
 
-##### Set API token
+### Set API token
 ```bash
 snaps settings -t <Your DigitanlOcean API token>
 ```
 
-##### Get your list droplets or volumes
+### Set max parallel tasks
 ```bash
-snaps list -d # Get your list droplets
-snaps list -v # Get your list volumes
+snaps settings -mc <numebr> #Max degree of concurrency for create snapshot (default 5)
 ```
 
-##### Create snaphots
+### Create snapshot for droplets
 ```bash
+snaps list -d # Get your list droplets
 snaps snapshot <droplet ids> -d # Create a snapshot for droplets
+```
+For example:
+```bash
+snaps list -d
+snaps snapshot 1 2 3 4 -d
+```
+
+### Create snapshot for volumes
+```bash
+snaps list -v # Get your list volumes
 snaps snapshot <volume ids> -v # Create a snapshot for volumes
 ```
 For example:
 ```bash
-snaps snapshot 1 2 3 4 -d
+snaps list -v
 snaps snapshot 1 2 3 4 -v
 ```
+
 ##### Create cron job
 ```bash
 crontab -e
@@ -61,11 +78,11 @@ crontab -e
 
 ##### Create cron job from a file
 ```bash
-snaps list -d -o /home/dproplets.csv # Export a droplet ids to file
-snaps list -v -o /home/volumes.csv # Export a volume ids to file
+snaps list -d -o /home/dproplets.csv # Export droplet ids to a file
+snaps list -v -o /home/volumes.csv # Export volume ids to a file
 crontab -e
-* * * * * snaps snapshot -d -f /home/dproplets.csv # Import a droplet ids from file
-* * * * * snaps snapshot -v -f /home/dproplets.csv # Import a volume ids from file
+* * * * * snaps snapshot -d -f /home/dproplets.csv # Import droplet ids from a file
+* * * * * snaps snapshot -v -f /home/dproplets.csv # Import volume ids from a file
 ```
 
 ## Built With
