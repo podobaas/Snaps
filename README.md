@@ -1,6 +1,14 @@
+<p align="center">
+<img src="/snaps.png" width="150" hight="150"/>
+</p>
+<h1 align="center">Snaps</h1>
 <h4 align="center">A simple multi-threaded command line tool for creating scheduled snapshots for DigitalOcean</h4>
 
-<h3 align="center"><a href="">Download binaries</a></h3>
+<p align="center">
+<img src="https://api.codacy.com/project/badge/Grade/e4b53e249ee04916b28227000340540f"/><img src="https://img.shields.io/github/license/podobaas/Snaps"/>
+</p>
+
+<h3 align="center"><a href="https://github.com/podobaas/Snaps/releases/tag/1.0">Download binaries</a></h3>
   
 
 ## Build
