@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <UserSecretsId>dotnet-Snaps-DB714ED4-F42E-4FA6-9C00-2EA71D7C1B87</UserSecretsId>
+        <AssemblyVersion>1.0</AssemblyVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="ConsoleTables" Version="2.4.0" />
+        <PackageReference Include="DigitalOcean.API" Version="5.0.1" />
+        <PackageReference Include="Microsoft.Extensions.CommandLineUtils" Version="1.1.1" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.2" />
+    </ItemGroup>
+</Project>
